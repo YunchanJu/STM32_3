@@ -1,5 +1,0 @@
-INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/samsung/Documents/Codex/2026-10-11/e/outputs/STM32_0_실험준비/fpga/bcd_conv/src/bcd_conv.v" into library work
-INFO: [VRFC 10-311] analyzing module bcd_to_binary
-INFO: [VRFC 10-311] analyzing module bcd_conv
-INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/samsung/Documents/Codex/2026-10-11/e/outputs/STM32_0_실험준비/fpga/bcd_conv/sim/tb_bcd_conv.sv" into library work
-INFO: [VRFC 10-311] analyzing module tb_bcd_conv

@@ -1,5 +1,0 @@
-Time resolution is 1 ps
-PASS traffic: full cycle, pedestrian blink, flicker, reset
-$finish called at time : 2186 ns : File "C:/Users/samsung/Documents/Codex/2026-10-19/x20/outputs/STM32_1_prepare/fpga/traffic/sim/tb_traffic.sv" Line 46
-PASS traffic: full cycle, pedestrian blink, flicker, reset
-$finish called at time : 2186 ns : File "C:/Users/samsung/Documents/Codex/2026-10-19/x20/outputs/STM32_1_prepare/fpga/traffic/sim/tb_traffic.sv" Line 46

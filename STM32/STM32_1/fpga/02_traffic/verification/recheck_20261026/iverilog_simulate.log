@@ -1,2 +1,0 @@
-PASS traffic: full cycle, pedestrian blink, flicker, reset
-outputs/STM32_repository/STM32/STM32_1/fpga/02_traffic/sim/tb_traffic.sv:46: $finish called at 2186000 (1ps)

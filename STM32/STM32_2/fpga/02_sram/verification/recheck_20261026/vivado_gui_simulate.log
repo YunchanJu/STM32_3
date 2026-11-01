@@ -1,3 +1,0 @@
-Time resolution is 1 ps
-PASS SRAM: 16 addresses, bus release, simultaneous request
-$finish called at time : 164 ns : File "C:/Users/samsung/Documents/Codex/2026-10-26/new-chat/outputs/STM32_repository/STM32/STM32_2/fpga/02_sram/sim/tb_sram.sv" Line 42

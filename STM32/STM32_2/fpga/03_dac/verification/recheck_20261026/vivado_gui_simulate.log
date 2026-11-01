@@ -1,3 +1,0 @@
-Time resolution is 1 ps
-PASS DAC: 260 writes, wraparound, channel, data hold, reset
-$finish called at time : 10436 ns : File "C:/Users/samsung/Documents/Codex/2026-10-26/new-chat/outputs/STM32_repository/STM32/STM32_2/fpga/03_dac/sim/tb_dac.sv" Line 31

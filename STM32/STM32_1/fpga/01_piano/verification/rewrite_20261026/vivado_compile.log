@@ -1,6 +1,0 @@
-INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/samsung/Documents/Codex/2026-10-26/new-chat/outputs/STM32_repository/STM32/STM32_1/fpga/01_piano/src/piano.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module piano
-INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/samsung/Documents/Codex/2026-10-26/new-chat/outputs/STM32_repository/STM32/STM32_1/fpga/01_piano/sim/tb_piano.sv" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module tb_piano
-INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/samsung/Documents/Codex/2026-10-26/new-chat/outputs/STM32_repository/STM32/STM32_1/fpga/01_piano/rewrite_gui/piano_rewrite.sim/sim_1/behav/xsim/glbl.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module glbl

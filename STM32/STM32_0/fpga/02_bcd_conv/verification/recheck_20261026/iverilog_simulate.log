@@ -1,3 +1,0 @@
-VCD info: dumpfile bcd_conv.vcd opened for output.
-PASS BCD: 100 valid and 156 invalid inputs
-outputs/STM32_repository/STM32/STM32_0/fpga/02_bcd_conv/sim/tb_bcd_conv.sv:16: $finish called at 256000 (1ps)

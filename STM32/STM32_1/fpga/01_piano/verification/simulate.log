@@ -1,6 +1,0 @@
-Time resolution is 1 ps
-PASS piano: all 8 tones, silence, multiple keys, reset
-$finish called at time : 4796 ns : File "C:/Users/samsung/Documents/Codex/2026-10-19/x20/outputs/STM32_1_prepare/fpga/piano/sim/tb_piano.sv" Line 38
-INFO: HDL object /tb_piano/notes is an unpacked array. VCD does not support unpacked array type according to IEEE LRM 1800-2009, section21.7.5.
-PASS piano: all 8 tones, silence, multiple keys, reset
-$finish called at time : 4796 ns : File "C:/Users/samsung/Documents/Codex/2026-10-19/x20/outputs/STM32_1_prepare/fpga/piano/sim/tb_piano.sv" Line 38

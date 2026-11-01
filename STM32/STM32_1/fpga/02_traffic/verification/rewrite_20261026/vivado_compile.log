@@ -1,6 +1,0 @@
-INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/samsung/Documents/Codex/2026-10-26/new-chat/outputs/STM32_repository/STM32/STM32_1/fpga/02_traffic/src/traffic.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module traffic
-INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/samsung/Documents/Codex/2026-10-26/new-chat/outputs/STM32_repository/STM32/STM32_1/fpga/02_traffic/sim/tb_traffic.sv" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module tb_traffic
-INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/samsung/Documents/Codex/2026-10-26/new-chat/outputs/STM32_repository/STM32/STM32_1/fpga/02_traffic/rewrite_gui/traffic_rewrite.sim/sim_1/behav/xsim/glbl.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module glbl

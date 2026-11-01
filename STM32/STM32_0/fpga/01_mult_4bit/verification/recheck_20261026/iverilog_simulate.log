@@ -1,3 +1,0 @@
-VCD info: dumpfile mult_4bit.vcd opened for output.
-PASS multiplier: 256 input pairs
-outputs/STM32_repository/STM32/STM32_0/fpga/01_mult_4bit/sim/tb_mult_4bit.sv:13: $finish called at 256000 (1ps)

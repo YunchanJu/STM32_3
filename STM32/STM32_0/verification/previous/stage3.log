@@ -1,5 +1,0 @@
-[1/2] Building C object CMakeFiles/ece2_474.dir/Core/Src/ece2_474_routine.c.obj
-[2/2] Linking C executable ece2_474.elf
-Memory region         Used Size  Region Size  %age Used
-             RAM:        2656 B       128 KB      2.03%
-           FLASH:       25900 B       512 KB      4.94%

@@ -1,2 +1,0 @@
-PASS traffic rewrite: 2 full cycles, 1-2-4-8 order, 11/2s phases, walk blink, flicker, reset
-outputs/STM32_repository/STM32/STM32_1/fpga/02_traffic/sim/tb_traffic.sv:36: $finish called at 8496000 (1ps)

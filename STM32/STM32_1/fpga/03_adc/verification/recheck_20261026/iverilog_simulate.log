@@ -1,2 +1,0 @@
-PASS ADC: 3 serial frames, command bits, sample, reset
-outputs/STM32_repository/STM32/STM32_1/fpga/03_adc/sim/tb_adc.sv:44: $finish called at 2016000 (1ps)

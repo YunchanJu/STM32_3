@@ -1,4 +1,0 @@
-﻿CCR,expected_duty_percent,measured_frequency_Hz,measured_duty_percent,Vpp_V,duty_error_percentage_points,calculated_high_us,source
-250,25,1000,24.79,3.36,-0.21,247.9,../mcu/05_task4_pwm/evidence/scope_duty25.png
-500,50,1000,50.34,3.36,0.34,503.4,../mcu/05_task4_pwm/evidence/scope_duty50.png
-750,75,1008,74.98,3.36,-0.02,743.85,../mcu/05_task4_pwm/evidence/scope_duty75.png

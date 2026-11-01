@@ -1,5 +1,0 @@
-INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/samsung/Documents/Codex/2026-10-26/new-chat/outputs/STM32_repository/STM32/STM32_0/fpga/01_mult_4bit/src/mult_4bit.v" into library work
-INFO: [VRFC 10-311] analyzing module multiply_unsigned
-INFO: [VRFC 10-311] analyzing module mult_4bit
-INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/samsung/Documents/Codex/2026-10-26/new-chat/outputs/STM32_repository/STM32/STM32_0/fpga/01_mult_4bit/sim/tb_mult_4bit.sv" into library work
-INFO: [VRFC 10-311] analyzing module tb_mult_4bit

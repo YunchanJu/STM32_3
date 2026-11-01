@@ -1,5 +1,0 @@
-Time resolution is 1 ps
-PASS ADC: 3 serial frames, command bits, sample, reset
-$finish called at time : 2016 ns : File "C:/Users/samsung/Documents/Codex/2026-10-19/x20/outputs/STM32_1_prepare/fpga/adc/sim/tb_adc.sv" Line 44
-PASS ADC: 3 serial frames, command bits, sample, reset
-$finish called at time : 2016 ns : File "C:/Users/samsung/Documents/Codex/2026-10-19/x20/outputs/STM32_1_prepare/fpga/adc/sim/tb_adc.sv" Line 44

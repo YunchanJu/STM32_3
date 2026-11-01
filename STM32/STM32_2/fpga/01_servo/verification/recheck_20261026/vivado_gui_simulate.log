@@ -1,3 +1,0 @@
-Time resolution is 1 ps
-PASS servo: 20ms frame, 1/1.5/2ms pulse, limits, reset
-$finish called at time : 100036 ns : File "C:/Users/samsung/Documents/Codex/2026-10-26/new-chat/outputs/STM32_repository/STM32/STM32_2/fpga/01_servo/sim/tb_servo_ctrl.sv" Line 44

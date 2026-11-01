@@ -1,15 +1,16 @@
-# Reproducible source and selected evidence are tracked; caches are not.
-**/build/
-**/vivado_recreated/
-**/.Xil/
-**/xsim.dir/
-**/*.jou
-**/*.pb
-**/*.dcp
-**/*.str
-**/*.backup.log
-**/CMakeUserPresets.json
-__pycache__/
+build
+mx.scratch
+!.settings
 
-**/rewrite_gui/
-**/~$*
+# LaTeX intermediate files (keep .tex and .pdf)
+*.aux
+*.log
+*.nav
+*.out
+*.snm
+*.synctex.gz
+*.toc
+*.vrb
+*.fls
+*.fdb_latexmk
+*.xdv

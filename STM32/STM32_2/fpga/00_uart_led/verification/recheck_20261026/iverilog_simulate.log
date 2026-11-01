@@ -1,2 +1,0 @@
-PASS UART: nine echoed bytes, repeated set/toggle, invalid command, ASCII distinction
-outputs/STM32_repository/STM32/STM32_2/fpga/00_uart_led/sim/tb_uart_led.sv:40: $finish called at 16420000 (1ps)

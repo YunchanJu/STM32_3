@@ -1,2 +1,0 @@
-PASS piano: all 8 tones, silence, multiple keys, reset
-outputs/STM32_repository/STM32/STM32_1/fpga/01_piano/sim/tb_piano.sv:38: $finish called at 4796000 (1ps)

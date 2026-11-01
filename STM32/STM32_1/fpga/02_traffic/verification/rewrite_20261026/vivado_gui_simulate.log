@@ -1,3 +1,0 @@
-Time resolution is 1 ps
-PASS traffic rewrite: 2 full cycles, 1-2-4-8 order, 11/2s phases, walk blink, flicker, reset
-$finish called at time : 8496 ns : File "C:/Users/samsung/Documents/Codex/2026-10-26/new-chat/outputs/STM32_repository/STM32/STM32_1/fpga/02_traffic/sim/tb_traffic.sv" Line 36

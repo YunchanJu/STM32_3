@@ -1,4 +1,0 @@
-Time resolution is 1 ps
-INFO: HDL object /tb_piano/hz is an unpacked array. VCD does not support unpacked array type according to IEEE LRM 1800-2009, section21.7.5.
-PASS piano rewrite: 8 frequencies, 3 periods/note, all invalid key masks, live reset
-$finish called at time : 74946 ns : File "C:/Users/samsung/Documents/Codex/2026-10-26/new-chat/outputs/STM32_repository/STM32/STM32_1/fpga/01_piano/sim/tb_piano.sv" Line 30

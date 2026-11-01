@@ -1,3 +1,0 @@
-Time resolution is 1 ps
-PASS ADC rewrite: 8 frames, CH2/5/7, stable MOSI, 16 clocks, quiet, dummy, pipeline/channel, LED, valid, reset
-$finish called at time : 11086 ns : File "C:/Users/samsung/Documents/Codex/2026-10-26/new-chat/outputs/STM32_repository/STM32/STM32_1/fpga/03_adc/sim/tb_adc.sv" Line 45

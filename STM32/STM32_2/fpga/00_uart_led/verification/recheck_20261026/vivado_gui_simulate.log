@@ -1,3 +1,0 @@
-Time resolution is 1 ps
-PASS UART: nine echoed bytes, repeated set/toggle, invalid command, ASCII distinction
-$finish called at time : 16420 ns : File "C:/Users/samsung/Documents/Codex/2026-10-26/new-chat/outputs/STM32_repository/STM32/STM32_2/fpga/00_uart_led/sim/tb_uart_led.sv" Line 40
