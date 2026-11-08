@@ -1,38 +1,80 @@
 {
-    "version": 3,
-    "configurePresets": [
-        {
-            "name": "default",
-            "hidden": true,
-            "generator": "Ninja",
-            "binaryDir": "${sourceDir}/build/${presetName}",
-		    "toolchainFile": "${sourceDir}/cmake/gcc-arm-none-eabi.cmake",
-            "cacheVariables": {
-            }
-        },
-        {
-            "name": "Debug",
-            "inherits": "default",
-            "cacheVariables": {
-                "CMAKE_BUILD_TYPE": "Debug"
-            }
-        },
-        {
-            "name": "Release",
-            "inherits": "default",
-            "cacheVariables": {
-                "CMAKE_BUILD_TYPE": "Release"
-            }
-        }
-    ],
-    "buildPresets": [
-        {
-            "name": "Debug",
-            "configurePreset": "Debug"
-        },
-        {
-            "name": "Release",
-            "configurePreset": "Release"
-        }
-    ]
+  "version": 3,
+  "configurePresets": [
+    {
+      "name": "default",
+      "hidden": true,
+      "generator": "Ninja",
+      "binaryDir": "${sourceDir}/build/stm32/${presetName}",
+      "toolchainFile": "${sourceDir}/cmake/gcc-arm-none-eabi.cmake",
+      "cacheVariables": {
+        "CMAKE_BUILD_TYPE": "Debug",
+        "CMAKE_EXPORT_COMPILE_COMMANDS": "ON"
+      }
+    },
+    {
+      "name": "Master",
+      "inherits": "default",
+      "cacheVariables": {
+        "SPI_ROLE": "Master"
+      }
+    },
+    {
+      "name": "Slave",
+      "inherits": "default",
+      "cacheVariables": {
+        "SPI_ROLE": "Slave"
+      }
+    },
+    {
+      "name": "Task8",
+      "inherits": "Master"
+    },
+    {
+      "name": "Task9_TX",
+      "inherits": "Master"
+    },
+    {
+      "name": "Task9_RX",
+      "inherits": "Slave"
+    },
+    {
+      "name": "Task10",
+      "inherits": "Master"
+    },
+    {
+      "name": "Task11",
+      "inherits": "Slave"
+    }
+  ],
+  "buildPresets": [
+    {
+      "name": "Master",
+      "configurePreset": "Master"
+    },
+    {
+      "name": "Slave",
+      "configurePreset": "Slave"
+    },
+    {
+      "name": "Task8",
+      "configurePreset": "Task8"
+    },
+    {
+      "name": "Task9_TX",
+      "configurePreset": "Task9_TX"
+    },
+    {
+      "name": "Task9_RX",
+      "configurePreset": "Task9_RX"
+    },
+    {
+      "name": "Task10",
+      "configurePreset": "Task10"
+    },
+    {
+      "name": "Task11",
+      "configurePreset": "Task11"
+    }
+  ]
 }

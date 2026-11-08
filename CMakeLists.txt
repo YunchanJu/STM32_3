@@ -68,3 +68,13 @@ target_link_libraries(${CMAKE_PROJECT_NAME}
 
     # Add user defined libraries
 )
+
+set(SPI_ROLE "Master" CACHE STRING "SPI role: Master or Slave")
+set_property(CACHE SPI_ROLE PROPERTY STRINGS Master Slave)
+if(SPI_ROLE STREQUAL "Master")
+    target_compile_definitions(${CMAKE_PROJECT_NAME} PRIVATE STM32_SPI_SLAVE=0)
+elseif(SPI_ROLE STREQUAL "Slave")
+    target_compile_definitions(${CMAKE_PROJECT_NAME} PRIVATE STM32_SPI_SLAVE=1)
+else()
+    message(FATAL_ERROR "SPI_ROLE must be Master or Slave")
+endif()

@@ -7,6 +7,15 @@
  */
 #include "ece2_474.h"
 #include "main.h"
+#include "stm32_3_config.h"
+
+volatile uint32_t spi_transfer_count;
+volatile uint32_t spi_error_count;
+volatile uint8_t spi_last_byte;
+static uint32_t spi_last_ms;
+#if !STM32_SPI_SLAVE
+static uint8_t spi_pattern_index;
+#endif
 /* 주변장치 변수의 extern 선언은 ece2_474.h에 있습니다. */
 
 /* UART 인터럽트 수신 실습 때 필요한 버퍼의 주석을 해제합니다.
@@ -18,40 +27,57 @@
 /* 주변장치 초기화가 끝난 뒤, 메인 루프에 들어가기 전에 한 번 호출됩니다. */
 void ece2_474_init(void)
 {
-    /* 필요한 기능만 주석을 해제합니다. 기본 핀·통신 설정은 이미 끝난 상태입니다.
-     * VS Code에서 해당 줄에 커서를 놓거나 여러 줄을 선택하고 Ctrl + /를 누르면
-     * 줄 주석(//)을 해제하거나 다시 설정할 수 있습니다.
-     */
-
-    /* TIM6: 100 ms마다 tim6_isr_p4()를 호출합니다. */
-    // HAL_TIM_Base_Start_IT(&htim6);
-
-    /* TIM3: PB4에서 1 kHz PWM을 출력합니다. 비교값 500은 50%입니다. */
-    // HAL_TIM_PWM_Start(&htim3, TIM_CHANNEL_1);
-    // __HAL_TIM_SET_COMPARE(&htim3, TIM_CHANNEL_1, 500U);
-
-    /* UART2: PC에서 한 바이트를 받으면 uart2_isr_p6()를 호출합니다.
-     * 위의 uart2_rx_ece2 버퍼도 주석을 해제해야 합니다.
-     * 수신 완료 함수에서 HAL_UART_Receive_IT를 다시 호출해야 다음 입력도 받습니다.
-     * getchar·fgets·scanf로 같은 UART를 읽는 방식과 함께 사용하지 않습니다.
-     */
-    // HAL_UART_Receive_IT(&huart2, &uart2_rx_ece2, 1U);
-
-    /* UART3: FPGA에서 한 바이트를 받으면 uart3_isr_p5()를 호출합니다.
-     * 위의 uart3_rx_ece2 버퍼도 주석을 해제해야 합니다.
-     * UART는 한 번 수신한 뒤, 수신 완료 함수에서 다시 수신을 요청합니다.
-     */
-    // HAL_UART_Receive_IT(&huart3, &uart3_rx_ece2, 1U);
-
-    /* GPIO 입력 인터럽트는 이미 켜져 있어 별도 시작 호출이 필요 없습니다.
-     * SPI·I2C와 UART 송신도 별도 시작 없이 필요한 시점에 송수신 함수를 호출합니다.
-     */
+    HAL_GPIO_WritePin(SPI_CS_ece2_GPIO_Port, SPI_CS_ece2_Pin, GPIO_PIN_SET);
+    spi_last_ms = HAL_GetTick();
+#if STM32_SPI_SLAVE
+    if (HAL_SPI_DeInit(&hspi1) != HAL_OK) Error_Handler();
+    hspi1.Init.Mode = SPI_MODE_SLAVE;
+    hspi1.Init.NSS = SPI_NSS_HARD_INPUT;
+    if (HAL_SPI_Init(&hspi1) != HAL_OK) Error_Handler();
+    GPIO_InitTypeDef gpio = {0};
+    gpio.Pin = GPIO_PIN_4;
+    gpio.Mode = GPIO_MODE_AF_PP;
+    gpio.Pull = GPIO_PULLUP;
+    gpio.Speed = GPIO_SPEED_FREQ_LOW;
+    gpio.Alternate = GPIO_AF5_SPI1;
+    HAL_GPIO_Init(GPIOA, &gpio);
+    printf("SPI1 slave RX: NSS=PA4, Mode0, 8-bit MSB, VCP=9600 8N1\r\n");
+#else
+    printf("SPI1 master TX: CS=PB6, Mode0, 781250Hz, VCP=9600 8N1\r\n");
+#endif
 }
 
 /* 메인 루프에서 반복해서 호출됩니다. */
 void polling_routine(void)
 {
-    /* 실습 코드 작성 */
+#if STM32_SPI_SLAVE
+    uint8_t rx = 0U;
+    HAL_StatusTypeDef result = HAL_SPI_Receive(&hspi1, &rx, 1U, 2000U);
+    if (result == HAL_OK) {
+        spi_last_byte = rx;
+        ++spi_transfer_count;
+        printf("RX=%02X\r\n", (unsigned int)rx);
+    } else if (result == HAL_TIMEOUT) {
+        printf("RX timeout: check sender, SCK, MOSI, CS and GND\r\n");
+    } else {
+        ++spi_error_count;
+        printf("RX error=%d\r\n", (int)result);
+    }
+#else
+    static const uint8_t patterns[4] = {0x55U, 0xA5U, 0x00U, 0xFFU};
+    uint32_t now_ms = HAL_GetTick();
+    if ((uint32_t)(now_ms - spi_last_ms) < 1000U) return;
+    spi_last_ms = now_ms;
+    uint8_t tx = patterns[spi_pattern_index];
+    HAL_GPIO_WritePin(SPI_CS_ece2_GPIO_Port, SPI_CS_ece2_Pin, GPIO_PIN_RESET);
+    HAL_StatusTypeDef result = HAL_SPI_Transmit(&hspi1, &tx, 1U, 100U);
+    HAL_GPIO_WritePin(SPI_CS_ece2_GPIO_Port, SPI_CS_ece2_Pin, GPIO_PIN_SET);
+    spi_last_byte = tx;
+    if (result == HAL_OK) ++spi_transfer_count;
+    else ++spi_error_count;
+    printf("TX=%02X, result=%d\r\n", (unsigned int)tx, (int)result);
+    spi_pattern_index = (uint8_t)((spi_pattern_index + 1U) & 3U);
+#endif
 }
 
 /* 1. 사용자 버튼 PC13을 눌렀을 때 호출됩니다. 우선순위: 7.
