@@ -1,0 +1,1 @@
+PASS SPI mode0: 4 patterns, 8 edges, 781250Hz, latch, busy start
